@@ -1,6 +1,7 @@
 package com.ahmeterdogan.data.repository;
 
 import com.ahmeterdogan.data.entity.Director;
+import com.ahmeterdogan.util.JDBCUtil;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -22,7 +23,7 @@ public class DirectorRepository {
     }
 
     public Optional<Director> findById(long id) {
-        List<Director> list = jdbcTemplate.query(FIND_BY_ID, getArguments(id), new RowMapper<Director>() {
+        List<Director> list = jdbcTemplate.query(FIND_BY_ID, JDBCUtil.getArguments(id), new RowMapper<Director>() {
             @Override
             public Director mapRow(ResultSet rs, int rowNum) throws SQLException {
                 var id = rs.getLong(1);
@@ -35,9 +36,5 @@ public class DirectorRepository {
         });
 
         return list.stream().findFirst();
-    }
-
-    private static Object[] getArguments(Object...args) {
-        return args;
     }
 }
