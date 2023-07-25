@@ -19,7 +19,7 @@ public class MovieAppController {
     }
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Movie> findAll() {
+    public Iterable<Movie> findAll() {
         return movieAppService.findAllMovies();
     }
 }

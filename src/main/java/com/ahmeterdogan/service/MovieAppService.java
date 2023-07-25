@@ -14,7 +14,7 @@ public class MovieAppService {
         this.movieAppRepo = movieAppRepo;
     }
 
-    public List<Movie> findAllMovies() {
+    public Iterable<Movie> findAllMovies() {
         return movieAppRepo.findAllMovies();
     }
 }
