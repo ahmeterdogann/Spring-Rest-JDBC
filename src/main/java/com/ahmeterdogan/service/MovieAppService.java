@@ -32,4 +32,8 @@ public class MovieAppService {
     public Iterable<Movie> findMovieByDirector(String directorName) {
         return movieAppRepo.findMovieByDirector(directorName);
     }
+
+    public long save(Movie movie) {
+        return movieAppRepo.save(movie);
+    }
 }

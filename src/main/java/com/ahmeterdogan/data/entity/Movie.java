@@ -4,14 +4,16 @@ public class Movie {
     private long id;
     private String name;
     private String year;
-    private Director director;
+    private String director;
 
-    public Movie(long id, String name, String year, Director director) {
+    public Movie(long id, String name, String year, String director) {
         this.id = id;
         this.name = name;
         this.year = year;
         this.director = director;
     }
+
+    public Movie() {}
 
     public long getId() {
         return id;
@@ -37,11 +39,11 @@ public class Movie {
         this.year = year;
     }
 
-    public Director getDirector() {
+    public String getDirector() {
         return director;
     }
 
-    public void setDirector(Director director) {
+    public void setDirector(String director) {
         this.director = director;
     }
 }

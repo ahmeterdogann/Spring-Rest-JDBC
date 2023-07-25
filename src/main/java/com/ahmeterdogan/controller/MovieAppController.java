@@ -40,4 +40,9 @@ public class MovieAppController {
         return movieAppService.findMovieByName(movieName).orElse(null);
     }
 
+    @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public long save(@RequestBody Movie movie) {
+        return movieAppService.save(movie);
+    }
+
 }
